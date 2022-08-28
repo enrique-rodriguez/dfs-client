@@ -32,7 +32,7 @@ class FileUploader:
         file.close()
 
     def put_block(self, block, nodes):
-        # TODO: FIX: If all nodes become inactive, this will create an infinite loop.
+        # TODO: FIX: If all nodes become inactive, this blow the stack.
         node = next(nodes)
         try:
             node.put(block)
