@@ -18,6 +18,9 @@ class MetaData(HttpService):
         res = super().get("/files")
 
         return [file.File.from_json(f) for f in res.json()]
+    
+    def delete(self, file_id):
+        res = super().delete(f"/files/{file_id}")
 
     def add_file(self, file):
         data = {"name": file.name, "size": file.size}

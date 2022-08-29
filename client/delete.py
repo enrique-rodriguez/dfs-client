@@ -7,6 +7,7 @@ class FileDeleter:
     def delete(self, file_id):
         if not (file := self.get_file(file_id)):
             raise FileNotFoundError(f"File with id {file_id} not found.")
+        self.metadata.delete(file_id)
     
     def get_file(self, file_id):
         try:

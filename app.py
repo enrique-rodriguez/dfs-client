@@ -45,7 +45,7 @@ class Application:
         args = parse_list_args(argv)
 
         for file in self.dfs.list():
-            print(file.id, file.name, "-", file.size, "bytes")
+            print(file.id, file.name, file.size, '-', 'bytes')
 
     def download(self, argv):
         args = parse_download_args(argv)
